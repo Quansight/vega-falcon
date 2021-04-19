@@ -59,6 +59,7 @@
   "keywords": [
     "vega",
     "falcon",
-    "transform"
+    "transform",
+    "crossfilter"
   ]
 }
