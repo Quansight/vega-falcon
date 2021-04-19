@@ -47,7 +47,8 @@ FalconFilter.Definition = {
 			'required': true,
 			'content': {
 				'type': 'field',
-				'array': true
+				'array': true,
+				'required': true
 			}
 		},
 		{
@@ -68,6 +69,25 @@ FalconFilter.Definition = {
 * Inherit from `Transform` constructor.
 */
 inherits( FalconFilter, Transform );
+
+/**
+* Processes incoming pulses.
+*
+* @name transform
+* @type {Function}
+* @memberof FalconFilter.prototype
+* @param {object} params - operator parameters
+* @param {Pulse} pulse - current dataflow pulse
+* @returns {(Pulse|null)} output pulse (or `StopPropagation`)
+*/
+Object.defineProperty( FalconFilter.prototype, 'transform', {
+	'configurable': true,
+	'enumerable': false,
+	'writable': true,
+	'value': function transform( params, pulse ) {
+		// TODO
+	}
+});
 
 /**
 * Exports.
