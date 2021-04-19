@@ -24,8 +24,8 @@ import { inherits } from 'vega-util';
 *
 * @constructor
 * @param {object} params - operator parameters
-* @param {Array<Function>} params.fields - array of dimension accessors to filter
-* @param {Array} query - array of per-dimension range queries
+* @param {Array<Function>} params.fieldsets - array of dimension accessors to filter
+* @param {Array} params.query - array of per-dimension range queries
 * @returns {FalconFilter} transform instance
 */
 function FalconFilter( params ) {
@@ -41,10 +41,14 @@ FalconFilter.Definition = {
 	'metadata': {},
 	'params': [
 		{
-			'name': 'fields',
-			'type': 'field',
+			'name': 'fieldsets',
+			'type': 'array',
 			'array': true,
-			'required': true
+			'required': true,
+			'content': {
+				'type': 'field',
+				'array': true
+			}
 		},
 		{
 			'name': 'query',
@@ -61,7 +65,7 @@ FalconFilter.Definition = {
 };
 
 /**
-* Inherit from parent constructor.
+* Inherit from `Transform` constructor.
 */
 inherits( FalconFilter, Transform );
 
