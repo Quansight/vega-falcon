@@ -1,0 +1,62 @@
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+</head>
+<body>
+	<div id="view"></div>
+	<script type="text/javascript">
+		let view;
+
+		fetch( './spec.json' )
+			.then( onResponse )
+			.then( onSpec )
+			.catch( onError );
+
+		/**
+		* Callback invoked upon fetching a Vega specification.
+		*
+		* @private
+		* @param {object} res - HTTP response
+		* @returns {object} Vega specification
+		*/
+		function onResponse( res ) {
+			return res.json();
+		}
+
+		/**
+		* Callback invoked upon resolving a Vega specification.
+		*
+		* @private
+		* @param {object} spec - Vega specification
+		* @returns {Promise} promise for evaluating the underlying dataflow graph
+		*/
+		function onSpec( spec ) {
+			return render( spec );
+		}
+
+		/**
+		* Callback invoked upon encountering an error.
+		*
+		* @private
+		* @param {Error} err - error
+		*/
+		function onError( err ) {
+			console.error( err );
+		}
+
+		/**
+		* Render a Vega specification.
+		*
+		* @private
+		* @param {object} spec - specification
+		* @returns {Promise} promise for evaluating the underlying dataflow graph
+		*/
+		function render( spec ) {
+			view = new vega.View( vega.parse( spec ), {
+				renderer:  'canvas', // renderer (canvas or svg)
+				container: '#view',  // parent DOM container
+				hover: true          // enable hover processing
+			});
+			return view.runAsync();
+		}
+	</script>
+</body>
