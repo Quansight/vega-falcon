@@ -1,0 +1,64 @@
+{
+  "name": "vega-falcon",
+  "version": "0.0.0",
+  "description": "A Vega transform for big data crossfiltering with Falcon.",
+  "license": "Apache-2.0",
+  "author": "OmniSci/Quansight",
+  "contributors": [
+    {
+      "name": "OmniSci",
+      "url": "https://www.omnisci.com/"
+    },
+    {
+      "name": "Quansight",
+      "url": "https://www.quansight.com/"
+    }
+  ],
+  "main": "./lib",
+  "directories": {
+    "doc": "./docs",
+    "example": "./examples",
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "scripts": {
+    "notes": "make notes",
+    "lint": "make lint",
+    "repl": "make repl",
+    "test": "make test",
+    "test-cov": "make test-cov",
+    "view-cov": "make view-cov",
+    "examples": "make examples",
+    "clean": "make clean"
+  },
+  "homepage": "https://github.com/Quansight/vega-falcon",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Quansight/vega-falcon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Quansight/vega-falcon/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">2.7.0"
+  },
+  "os": [
+    "aix",
+    "darwin",
+    "freebsd",
+    "linux",
+    "macos",
+    "openbsd",
+    "sunos",
+    "win32",
+    "windows"
+  ],
+  "keywords": [
+    "vega",
+    "falcon",
+    "transform"
+  ]
+}
