@@ -36,8 +36,20 @@ DOCS_DIR ?= $(ROOT_DIR)/docs
 # Define the directory for data:
 DATA_DIR ?= $(ROOT_DIR)/data
 
+# Define the directory for distributable files:
+DIST_DIR ?= $(ROOT_DIR)/dist
+
+# Define the directory for examples:
+EXAMPLES_DIR ?= $(ROOT_DIR)/examples
+
 # Define the directory for scripts:
 SCRIPTS_DIR ?= $(ROOT_DIR)/scripts
+
+# Define the directory for source files:
+SRC_DIR ?= $(ROOT_DIR)/src
+
+# Define the directory for tests:
+TESTS_DIR ?= $(ROOT_DIR)/test
 
 # Define the root tools directory:
 TOOLS_DIR ?= $(ROOT_DIR)/tools
