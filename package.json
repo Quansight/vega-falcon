@@ -14,7 +14,9 @@
       "url": "https://www.quansight.com/"
     }
   ],
-  "main": "./lib",
+  "main": "./lib/index.js",
+  "module": "./lib/module.js",
+  "unpkg": "./dist/bundle.min.js",
   "directories": {
     "doc": "./docs",
     "example": "./examples",
