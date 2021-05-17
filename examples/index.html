@@ -14,7 +14,7 @@
 	<script type="text/javascript">
 		let view;
 
-		fetch( './spec.json' )
+		fetch( 'http://localhost:8000/spec.json' )
 			.then( onResponse )
 			.then( onSpec )
 			.catch( onError );
@@ -23,10 +23,13 @@
 		* Callback invoked upon fetching a Vega specification.
 		*
 		* @private
-		* @param {object} res - HTTP response
-		* @returns {object} Vega specification
+		* @param {Object} res - HTTP response
+		* @returns {Object} Vega specification
 		*/
 		function onResponse( res ) {
+			if ( !res.ok ) {
+				throw new Error( 'unexpected error. Failed with status: ' + res.status + '.' );
+			}
 			return res.json();
 		}
 
@@ -34,7 +37,7 @@
 		* Callback invoked upon resolving a Vega specification.
 		*
 		* @private
-		* @param {object} spec - Vega specification
+		* @param {Object} spec - Vega specification
 		* @returns {Promise} promise for evaluating the underlying dataflow graph
 		*/
 		function onSpec( spec ) {
@@ -48,14 +51,14 @@
 		* @param {Error} err - error
 		*/
 		function onError( err ) {
-			console.error( err );
+			console.log( err );
 		}
 
 		/**
 		* Render a Vega specification.
 		*
 		* @private
-		* @param {object} spec - specification
+		* @param {Object} spec - specification
 		* @returns {Promise} promise for evaluating the underlying dataflow graph
 		*/
 		function render( spec ) {
