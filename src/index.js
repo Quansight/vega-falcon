@@ -16,4 +16,5 @@
 * limitations under the License.
 */
 
-export { default as falconfilter } from './src/falcon.js';
+export { default as falconfilter } from './falcon.js';
+export { default as falconresolvefilter } from './resolve.js';
