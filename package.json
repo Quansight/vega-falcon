@@ -14,6 +14,7 @@
       "url": "https://www.quansight.com/"
     }
   ],
+  "type": "module",
   "main": "./lib/index.js",
   "module": "./lib/module.js",
   "unpkg": "./dist/bundle.min.js",
@@ -45,7 +46,10 @@
     "vega-dataflow": "^5.7.4",
     "vega-util": "^1.16.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@stdlib/stdlib": "0.0.94",
+    "vega": "^5.20.2"
+  },
   "engines": {
     "node": ">=12.0.0",
     "npm": ">2.7.0"
