@@ -29,7 +29,8 @@ import { inherits } from 'vega-util';
 * @returns {FalconFilter} transform instance
 */
 function FalconFilter( params ) {
-	Transform.call( this, params );
+	Transform.call( this, null, params );
+	this._index = null;
 	return this;
 }
 
@@ -86,6 +87,8 @@ Object.defineProperty( FalconFilter.prototype, 'transform', {
 	'writable': true,
 	'value': function transform( params, pulse ) {
 		// TODO
+
+		console.log( params );
 	}
 });
 
