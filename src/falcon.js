@@ -16,8 +16,12 @@
 * limitations under the License.
 */
 
+import debug from 'debug';
 import { Transform } from 'vega-dataflow';
 import { inherits } from 'vega-util';
+
+// Create a logger:
+const logger = debug( 'vega-falcon-transform:falcon' );
 
 /**
 * Big data crossfilter.
@@ -88,7 +92,7 @@ Object.defineProperty( FalconFilter.prototype, 'transform', {
 	'value': function transform( params, pulse ) {
 		// TODO
 
-		console.log( params );
+		logger( 'Parameters: %s', JSON.stringify( params ) );
 	}
 });
 

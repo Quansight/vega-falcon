@@ -40,4 +40,11 @@ vega.transforms.falconresolvefilter = falconresolvefilter;
 // Create a new Vega view:
 const view = new vega.View( vega.parse( spec ) );
 
+// Log the initial state:
+console.log( view.getState() );
+
+// Evaluate the data flow graph:
+await view.runAsync();
+
+// Log the evaluated state:
 console.log( view.getState() );
